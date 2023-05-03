@@ -1,0 +1,50 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "image": "https://upload.wikimedia.org/wikipedia/id/8/81/ShawshankRedemptionMoviePoster.jpg",
+      "title": "The Shawshank Redemption",
+      "year": "1994"
+    },
+    {
+      "id": 2,
+      "image": "https://upload.wikimedia.org/wikipedia/id/1/1c/Godfather_ver1.jpg",
+      "title": "The Godfather",
+      "year": "1972"
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/id/8/81/ShawshankRedemptionMoviePoster.jpg",
+      "title": "The Shawshank Redemption",
+      "year": "2013",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "image": "https://upload.wikimedia.org/wikipedia/id/c/ca/Pulp_fiction_poster.jpg",
+      "title": "Pulp Fiction",
+      "year": "1994"
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/id/8/81/ShawshankRedemptionMoviePoster.jpg",
+      "title": "Missing",
+      "year": "2023",
+      "id": 6
+    },
+    {
+      "image": "https://upload.wikimedia.org/wikipedia/id/8/81/ShawshankRedemptionMoviePoster.jpg",
+      "title": "Missing",
+      "year": "2023",
+      "id": 7
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "title": "10000"
+    },
+    {
+      "id": 2,
+      "title": "abc"
+    }
+  ]
+}
