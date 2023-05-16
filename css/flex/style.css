@@ -1,0 +1,50 @@
+* {
+    margin : 0;
+}
+
+header{
+    background-color: aquamarine;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav{
+    background-color: beige;
+    border : 1px dashed black;
+    display : flex;
+    justify-content: center;
+}
+
+.btn-nav{
+    border :1px dashed black;
+    padding : 5px;
+}
+
+.btn-nav:hover{
+    cursor: pointer;
+    background-color: aquamarine;
+}
+
+section{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+}
+
+card {
+    border : 1px dashed black;
+    padding: 5px;
+}
+
+@media screen and (max-width : 620px) {
+    section {
+        grid-template-columns: auto;
+    }
+}
+
+@media screen and (min-width:621px) and (max-width:992px) {
+    section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
