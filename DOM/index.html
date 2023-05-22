@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keranjang Belanja</title>
+</head>
+<body>
+    <h2>Belanjaanku</h2>
+    <button id="tambah">
+        Tambah Belanjaan
+    </button>
+    <button onclick="kurangiBelanjaan()">
+        Kurangi Belanjaan
+    </button>
+    <hr />
+    <h3>Total belanjaanku :<span id="total">3</span> item</h3>
+    <p>FE08</p>
+</body>
+
+<script>
+    function tambahBelanjaan(){
+        document.getElementById("total").style.color = "red"
+        let belanja = document.getElementById("total");
+        belanja.innerText = parseInt(belanja.innerText) + 1;
+    }
+
+    let tombolTambah = document.getElementById("tambah");
+    tombolTambah.addEventListener("click", tambahBelanjaan);//cara 1
+
+    function kurangiBelanjaan(){
+        let belanja = document.getElementById("total");
+        let total = parseInt(belanja.innerText);
+        if (total > 0){
+            total --;
+            belanja.innerText = total;
+        }
+    }
+</script> 
+</html>
+
+
+<!-- ide :: -->
+<!-- pakai event handler, event click dibutton -->
+<!-- terus buat function additem -->
+<!-- terus buat function minitem -->
+<!-- panggil span -->

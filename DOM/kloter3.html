@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        Belajar DOM
+    </header>
+    <h5 id="element1">element 1</h5>
+    <h4 class="el-h4">test 1</h4>
+    <h4  class="el-h4">tes t 2</h4>
+    <h4  class="el-h4">test 3</h4>
+    <h4  class="el-h4">test 4</h4>
+
+    <div id="new">
+    </div>
+
+    <br/>
+    <div>
+        <button onclick="showAlert()" >Akses Kamera</button>
+    </div>
+
+    <div>
+        <button id="event-click" >Akses Kamera</button>
+    </div>
+
+    <div>
+        <input type="text" id="name" value=""  />
+        <button onclick="setName()">Set Name</button>
+    </div>
+    <h2></h2>
+</body>
+</html>
+
+<script>
+    let el1 = document.getElementById("element1");
+    console.log(el1);
+
+    let elementH4 = document.getElementsByClassName("el-h4");
+
+    for(let i =0; i< elementH4.length; i++){
+        elementH4[i].innerText = "Haloo! lagi belajar dom";
+        elementH4[i].style.color = "red";
+    }
+
+    const tag = document.createElement("p");
+
+// membuat teks baru untuk di sisipkan kedalam elemen yang baru dibuat
+const text = document.createTextNode(
+  "Ruangguru CAMP merupakan program Studi Independen Kampus Merdeka yang dikembangkan oleh Ruangguru"
+);
+
+// menempelkan teks baru kedalam elemen <p> baru
+tag.appendChild(text);
+
+// mendapatkan elemen <div> dengan class="new"
+var element = document.getElementById("new");
+// menempelkan elemen <p> baru kedalam <div> dengan class="new"
+element.appendChild(tag);
+
+
+//event
+//1. langsung di buttonnya, onclick, onmousein
+//2. menggunakan build in function addEventListener
+function showAlert(){
+    navigator.mediaDevices.getUserMedia({ video: true });
+}
+
+//cara 2 :
+let btn =  document.getElementById("event-click");
+btn.addEventListener("mouseover", ()=>{
+    alert("Kamu baru saja double click")
+    elementH4[2].style.color = "blue";
+})
+
+document.querySelector("h2").innerHTML = localStorage.getItem("name")
+
+async function setName() {
+
+    let value = document.getElementById("name").value;
+    localStorage.setItem("name", value);
+}
+
+</script>

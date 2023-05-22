@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document DOM</title>
+</head>
+<body>
+    <h1>Keranjang Belanja</h1>
+    <br />
+    <button onclick="incrementCount()">
+        Tambah Belanjaan
+    </button>
+    <button onclick="decrementCount()">
+        Kurangin Belanjaan
+    </button>
+    <hr />
+    <h3>Total Belanja Saya : <span id="count">4</span></h3>
+    <script>
+        let count =  document.getElementById("count").innerText;
+        let countElement = document.getElementById("count");
+
+        function incrementCount(){
+            count++;
+            countElement.textContent=count;
+        }
+
+        function decrementCount(){
+            if(count>0){
+                count--;
+                countElement.textContent=count; 
+            }
+        }
+    </script>
+</body>
+<!-- ide-ide : 
+
+2. buat button onclick="incrementCount()" : buat button onclick="decrementCount()"
+3. Buat function incrementCount() dan decrementCount() di element script hehe
+4. Dari function tsb, pakai getElementById("count") untuk mengubah angka nya
+
+-->
+</html>
+
+ <script> 
+// function incrementCount() {
+//     let plus = document.getElementById('count')
+// }
+
+
+</script> >
