@@ -1,0 +1,11 @@
+// 1. Komponen dimulai dengan huruf besar.
+// example : 
+
+const CardPost = () => {
+    let data = true;
+    return(
+        <div>
+            {data ? <p>data ada </p> : <p>data gaada <p/>}
+        <div/>
+    )
+}
