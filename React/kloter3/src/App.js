@@ -32,7 +32,7 @@ function App() {
 // 1. data static
 // 2. data dynamic
 // 3. state as a props
-// 4. callback function
+// 4. callback function as props
 
 function Belajar() {
   const [count, setCount] = useState(0);
