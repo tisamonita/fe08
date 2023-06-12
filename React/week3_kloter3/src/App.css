@@ -2,7 +2,7 @@
   text-align: center;
 }
 
-.nav-side{
+.nav{
   display: flex;
   flex-direction: row;
 }
@@ -10,14 +10,13 @@
 .btn-nav{
   padding: 5px;
   margin: 5px;
-  border : 1px solid black;
+  border: 1px dashed black;
 }
 
 
 .btn-nav:hover{
   cursor: pointer;
 }
-
 
 .App-logo {
   height: 40vmin;

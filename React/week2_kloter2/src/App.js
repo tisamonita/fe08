@@ -1,95 +1,55 @@
 import React, { useState, useEffect } from "react";
+import { Route, Routes, Link } from "react-router-dom";
+
 import logo from "./logo.svg";
 import "./App.css";
 
+import Home from "./Component/home";
+import AboutUs from "./Component/aboutUs";
+import Planets from "./Component/planets";
+import DetailPlanet from "./Component/detailPlanet";
+import NotFound from "./Component/notFound";
+
 function App() {
-  const [count, setCount] = useState(0);
-  const [planets, setPlanets] = useState();
-  const [page, setPage] = useState(1);
-  const [loading, setLoading] = useState(false);
-
-  // useEffect(()=>{
-  //   console.log("Berjalan ketika browser pertama kali render dan ketika terjadi perubahan state apapaun")
-  // })
-
-  useEffect(() => {
-    setLoading(true);
-    fetch(`https://swapi.dev/api/planets/?page=${page}`)
-      .then((res) => res.json())
-      .then((json) => {
-        setPlanets(json);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
-      });
-  }, [page]);
-
-  //component didMount = mounting
-  //regular use
-  // useEffect(()=>{
-  //   console.log("Berjalan hanya ketika browser pertama kali render")
-  // }, [])
-
-  //updating
-  //regular use
-  // useEffect(()=>{
-  //   //nge fetch data yang ketika user melakukan aksi sesuatu, datanya berubah, atau nge fetch data ulang
-  //   console.log("Berjalan ketika browser pertama kali render dan ketika terjadi perubahan nilai state yang dituliskan di parameter")
-  // }, [count])
-
-  //unmounting
-  // useEffect(()=>{
-  //   return()=>{
-  //     console.log("Berjalan setelah proses mounting/updating dari useeffect lain selesai")
-  //   }
-  // })
-  //mounting
-  //updating
-  //unmounting
   return (
     <>
-      <div className="App">
-        {count}
-        <button onClick={() => setCount(count + 1)}>Tambah nilai</button>
-      </div>
-      <div>
-        <h2>List Data Planets:</h2>
-        {planets && (
-          <>
-            <button onClick={() => setPage(page - 1)} disabled={page === 1}>
-              Halaman Sebelumnya
-            </button>
-            <button
-              onClick={() => setPage(page + 1)}
-              disabled={page >= planets.count / 10}
-            >
-              Halaman Selanjutnya
-            </button>
-          </>
-        )}
-
-        {loading && "Loading...."}
-        {/* short-circuit dipakai untuk mastiin data udh dapat, baru diproses */}
-        {planets &&
-          !loading &&
-          planets.results.map((planet) => {
-            return (
-              <>
-                <h5>{planet.name}</h5>
-                <h6>{planet.population}</h6>
-                <h6>{planet.orbital_period}</h6>
-                <hr />
-              </>
-            );
-          })}
-        {/* useEffect, useState, handleEvent = onClick */}
-        {/* buat usestae untuk simpan data, fetch data pake useeffect, API dr useeffect dijadikan ke json. trus  set Data  */}
+      <h2>React Router</h2>
+      <div className="nav-side">
+          <Link className="btn-nav" to="/">
+            HOME
+          </Link>
+          <Link className="btn-nav" to="/planets">
+            Planets
+          </Link>
+          <Link className="btn-nav" to="/aboutus">
+            ABOUT US
+          </Link>
       </div>
 
-      {/* Case 1: Dapetin data langsung dan ditampilkan langsung ktika load =>diMount/mounting */}
-      {/* Case 2: Case ketika user pengen datanya berubah => updating .didUpdate */}
+{/* // Link : dipakai untuk navigasi */}
+{/* Navigate */}
+{/* href */}
+
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+        {/* Terpisah halaman antara parent route dan child  */}
+        <Route path="/planets">
+          <Route index element={<Planets/>} />
+          <Route path=":planetId" element={<DetailPlanet/>}/>
+        </Route>
+        {/* tidak terpisah  */}
+        {/* <Route path="/planets" element={<Planets/>} >
+          <Route path=":id" element={<DetailPlanet/>}/>
+        </Route> */}
+        <Route path="/aboutus" element={<AboutUs/>}/>
+        <Route path="*" element={<NotFound/>}/>
+      </Routes>
+
+      {/* //Home
+      //AboutUs
+      //planets
+      //planets by id */
+      }
     </>
   );
 }
