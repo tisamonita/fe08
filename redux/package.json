@@ -1,0 +1,22 @@
+{
+	"name": "redux-html",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "parcel index.html"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@reduxjs/toolkit": "^1.9.5",
+		"redux": "^4.2.1"
+	},
+	"devDependencies": {
+		"parcel": "^2.9.2",
+		"process": "^0.11.10"
+	}
+}
